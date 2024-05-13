@@ -69,7 +69,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   color: AppColors.primaryText,
                   decoration: TextDecoration.underline,
                   fontSize: 12.sp,
-                  decorationColor: Colors.blue,
+                  decorationColor: Colors.grey,
                 ),
               ),
             ),
@@ -83,7 +83,7 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             CustomButton(
               onPressed: () {},
-              text: 'Register',
+              text: 'Sign Up',
               gradientStartColor: AppColors.primaryElementText,
               gradientEndColor: AppColors.primaryElementText,
               border: Border.all(

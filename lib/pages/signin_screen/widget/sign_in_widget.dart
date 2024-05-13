@@ -5,11 +5,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 AppBar buildAppBar() {
   return AppBar(
     elevation: 0,
-    bottom: const PreferredSize(
-      preferredSize: Size.fromHeight(1.0),
+    bottom: PreferredSize(
+      preferredSize: const Size.fromHeight(1.0),
       child: Divider(
         thickness: 1.0,
-        color: AppColors.primaryThreeElementText,
+        color: Colors.grey.withOpacity(0.2),
       ),
     ),
     title: Text(
@@ -64,6 +64,6 @@ Widget reusableText(String text) {
         fontWeight: FontWeight.normal,
         fontSize: 14.sp,
       ),
-    ),
+    ), 
   );
 }

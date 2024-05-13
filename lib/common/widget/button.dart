@@ -48,9 +48,9 @@ class CustomButton extends StatelessWidget {
             end: Alignment.bottomRight,
             colors: [gradientStartColor, gradientEndColor],
           ),
-          boxShadow: const [
+          boxShadow:  [
             BoxShadow(
-              color: AppColors.primaryThreeElementText,
+              color: Colors.grey.withOpacity(0.4),
               spreadRadius: 1.0,
               blurRadius: 2.0,
               offset: Offset(0, 1),
