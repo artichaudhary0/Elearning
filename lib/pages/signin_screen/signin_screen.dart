@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:elearning/common/values.dart';
 import 'package:elearning/common/widget/button.dart';
 import 'package:elearning/common/widget/text_field.dart';
@@ -17,6 +19,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(),
+      resizeToAvoidBottomInset: false,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -75,14 +78,18 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
             const Spacer(),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                log("Login button");
+              },
               text: 'Login',
             ),
             SizedBox(
               height: 20.h,
             ),
             CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                log("Sign up button");
+              },
               text: 'Sign Up',
               gradientStartColor: AppColors.primaryElementText,
               gradientEndColor: AppColors.primaryElementText,
