@@ -1,4 +1,5 @@
 import 'package:elearning/common/values.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
@@ -10,8 +11,8 @@ class CustomTextField extends StatefulWidget {
   final double contentHorizontalPadding;
   final double contentVerticalPadding;
   final bool isPassword;
-  final TextEditingController controller;
-  const CustomTextField({
+  final Function(String)? onChanged;
+   const CustomTextField({
     super.key,
     this.hintText = "Enter details",
     this.prefixImage = "",
@@ -21,7 +22,7 @@ class CustomTextField extends StatefulWidget {
     this.contentHorizontalPadding = 10,
     this.contentVerticalPadding = 12,
     this.isPassword = false,
-    required this.controller,
+     this.onChanged,
   });
 
   @override
@@ -39,8 +40,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
         fontSize: widget.fontSize,
         color: widget.hintColor,
       ),
+      onChanged: widget.onChanged,
       cursorColor: AppColors.primaryThreeElementText,
-      controller: widget.controller,
       decoration: InputDecoration(
         prefixIcon: Image.asset(widget.prefixImage),
         contentPadding: EdgeInsets.symmetric(

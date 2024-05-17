@@ -1,4 +1,5 @@
 import 'package:elearning/firebase_options.dart';
+import 'package:elearning/pages/signin_screen/bloc/signin_bloc.dart';
 import 'package:elearning/pages/signin_screen/signin_screen.dart';
 import 'package:elearning/pages/welcome/bloc/welcome_bloc.dart';
 import 'package:elearning/pages/welcome/welcome_screen.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await Firebase.initializeApp();
   runApp(
     const MyApp(),
   );
@@ -24,6 +25,8 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(
           create: (_) => WelcomeBloc(),
+        ), BlocProvider(
+          create: (_) => SignInBloc(),
         ),
       ],
       child: ScreenUtilInit(
